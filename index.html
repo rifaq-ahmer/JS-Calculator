@@ -9,6 +9,7 @@
   <title>JS-Calculator</title>
 </head>
 <body>
+  <div class="toggleBtn"></div>
   <div class="calculator">
     <div class="buttons">
       <h2 id="value"></h2>
@@ -35,21 +36,25 @@
 <script>
   let btn = document.querySelectorAll("span");
   let value = document.getElementById("value");
+  let toggleBtn = document.querySelector(".toggleBtn") 
+  let body = document.querySelector("body")
   for (let i = 0; i < btn.length; i++) {
 	  btn[i].addEventListener("click", function () {
 		if (this.innerHTML == "=") {
 			value.innerHTML = eval(value.innerHTML);
-			console.log("EQUAL TO BUTTON");
+
 		} else {
 			if (this.innerHTML == "Clear") {
-				console.log("CLEAR BUTTON");
+	
 				value.innerHTML = "";
 			} else {
 				value.innerHTML += this.innerHTML;
-				console.log("ANY NUMBER BUTTON");
-			}
+      }
 		}
 	});
+}
+toggleBtn.onclick = function (){
+  body.classList.toggle("dark");
 }
 </script> 
 </body>
